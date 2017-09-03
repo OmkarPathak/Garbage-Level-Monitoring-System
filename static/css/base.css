@@ -1,0 +1,74 @@
+/* ==================================== base.html styles ======================================== */
+.add-margin-top {
+    margin-top:4%;
+}
+
+body{
+    background-color: rgb(242, 243, 244);
+}
+
+/* ===================================== Homepage styles ======================================== */
+.navbar-default {
+    font-size: 17px;
+    margin: 0;
+    padding: 7px;
+    background-color: white;
+}
+
+nav .navbar-brand {
+    font-size: 20px;
+}
+
+/*change default hover on links*/
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-brand:hover {
+    color: #2E3134;
+}
+
+/*change default active links*/
+.navbar-default .navbar-nav> .active > a,
+.navbar-default .navbar-nav> .active > a:focus,
+.navbar-default .navbar-nav> .active > a:hover {
+
+}
+
+/*change default behaviour of jumbotron*/
+.jumbotron {
+    margin-bottom: 0px;
+    height: 350px;
+    color: white;
+    background-color: #2E3134;
+    border-radius: 0px !important;
+}
+
+.section-heading {
+    color: #2E3134;
+}
+
+.hr-line {
+    max-width:50px;
+    border-top: 2px solid #bababa;
+}
+
+.thumbnail {
+    border-radius: 0px;
+    box-shadow: 2px 2px 2px #D6DBDF;
+    border-style: none;
+    border: 0;
+    color: #2E3134;
+}
+
+.thumbnail:hover {
+    box-shadow: 2px 2px 2px #A6ACAF;
+    border-style: none;
+    border: 0;
+    text-decoration: none;
+}
+
+@media only screen and (max-device-width: 480px) {
+    /* define mobile specific styles come here */
+    body {
+        margin-top: 19%;
+    }
+}
