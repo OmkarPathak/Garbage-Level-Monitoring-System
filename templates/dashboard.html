@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+<div id="home" class="container-fluid" style="margin:0; padding:0">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="text-center">
+                    <h1>Latest Record: {{ latest_record.level }} of Dustbin ID: {{ latest_record.dustbin_id }}</h1>
+                    <h2>Last Recorded at: {{ latest_record.recorded_on }}</h2>
+                </div>
+            </div><!-- ./col -->
+        </div><!-- ./row -->
+    </div><!-- ./jumbotron -->
+</div>
+
+{% endblock %}

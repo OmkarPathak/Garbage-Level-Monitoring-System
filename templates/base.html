@@ -1,0 +1,61 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Garbage Level Monitoring System
+        </title>
+        <link rel='stylesheet' href='{% static "css/bootstrap.min.css" %}'>
+        <link rel='stylesheet' href='{% static "css/base.css" %}'>
+    </head>
+    <body>
+         <!-- data-spy="scroll" data-target=".navbar" data-offset="10" -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+	        <div class="container">
+		        <div class="navbar-header">
+    		        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    		            <span class="sr-only">Toggle navigation</span>
+    		            <span class="icon-bar"></span>
+    		            <span class="icon-bar"></span>
+    		            <span class="icon-bar"></span>
+    		        </button>
+    		        <a class="navbar-brand" href="/">
+    		          	GLMS
+    		        </a>
+		        </div><!-- ./navbar-header -->
+		        <div id="navbar" class="navbar-collapse collapse">
+			        <ul class="nav navbar-nav" id="navbar-links">
+			          	<li>
+                            <a href="/dashboard"><span class="glyphicon glyphicon-dashboard"></span> DASHBOARD </a>
+                        </li>
+			        </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- <li><a href="/accounts/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+                        {% comment %} If user is logged in, show his/her username {% endcomment %}
+                        {% if request.user.username %}
+                            <li><a href="#">Hello, {{ request.user.username }}</a></li>
+                            <li>
+                                <a href="/logout">
+                                  <span class="glyphicon glyphicon-log-out"></span> Logout
+                                </a>
+                            </li>
+                        {% else %}
+                            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        {% endif %}
+                    </ul>
+		        </div><!--/.nav-collapse -->
+	        </div><!-- ./container-->
+	    </nav>
+        <div class="add-margin-top"></div>
+        {% block content %}
+
+        {% endblock %}
+    </body>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/base.js' %}"></script>
+    <script src="{% static 'js/chart.min.js' %}"></script>
+    <script src="{% static 'js/utils.js' %}"></script>
+</html>
